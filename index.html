@@ -9,7 +9,24 @@
         get: (searchParams, prop) => searchParams.get(prop),
     });
     // Get the value of "some_key" in eg "https://example.com/?some_key=some_value"
-    let value = params.key; // "some_value"
-    console.log(value);
+
+    function createMetaProperty(property, content) {
+        var meta = document.createElement('meta');
+        meta.property = property;
+        meta.content = content;
+        document.getElementsByTagName('head')[0].appendChild(meta);
+    }
+    
+    let videoUrl = params.video;
+    let imageUrl = params.image;
+    let videoTitle = "Video title";
+    
+    createMetaProperty("og:site_name", "HqPorner");
+    createMetaProperty("og:type", "video.other");
+    createMetaProperty("og:description", "Video");
+    createMetaProperty("og:image", imageUrl);
+    createMetaProperty("og:title", videoTitle);
+    createMetaProperty("og:url", videoUrl);
+    
 </script>
 </html>
