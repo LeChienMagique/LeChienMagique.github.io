@@ -12,7 +12,7 @@
 
     function createMetaProperty(property, content) {
         var meta = document.createElement('meta');
-        meta.property = property;
+        meta.setAttribute("property", property);
         meta.content = content;
         document.getElementsByTagName('head')[0].appendChild(meta);
     }
